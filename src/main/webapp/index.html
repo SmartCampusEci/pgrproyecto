@@ -1,0 +1,102 @@
+
+<!doctype html>
+<!--[if lt IE 8]>         <html class="no-js lt-ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Web Application</title>
+        <meta name="description" content="Responsive Admin Web App">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+        <!-- Needs images, font... therefore can not be part of main.css -->
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.min.css">
+        <!-- end Needs images -->
+        <link rel="stylesheet" href="styles/main.css"/>
+        <style>
+        h1{ color:red;}
+        /* FA 4.0.0 and newer */
+        
+        .glyphicon{
+            text-rendering: auto;
+        }
+        
+        .fa {
+        text-rendering: auto;
+        }
+
+
+        /* FA 3.2.1 and older */
+        [class^="icon-"],
+        [class*=" icon-"]  {
+        text-rendering: auto;
+        }
+    </style>
+
+    </head>
+    <body data-ng-app="app" id="app" class="app" data-custom-page="" data-off-canvas-nav="" data-ng-controller="AppCtrl" data-ng-class=" {'layout-boxed': admin.layout === 'boxed' } ">
+        <!--[if lt IE 9]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <div class="main-container">
+                <div class="page-signin">
+    <div class="signin-header">
+        <section class="logo text-center">
+            <a   href="#/">{{main.brand}}</a>
+        </section>
+    </div>
+
+    <div class="signin-body" data-ng-controller="loginCtrl as log">
+        
+        
+        <div class="container">
+            <div class="form-container">
+
+                <form class="form-horizontal" >
+                    <fieldset >
+                        <div class="form-group">
+                            <div class="btn-icon-lined btn-icon-round btn-icon-sm btn-default-light">
+                                <span class="fa fa-user"></span>
+                            </div>
+                            <input  type="text" data-ng-model="usuario"
+                                   class="form-control input-lg input-round text-center"
+                                   placeholder="Username"
+                                   >
+                        </div>
+                        <div class="form-group">
+                            <div class="btn-icon-lined btn-icon-round btn-icon-sm btn-default-light">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </div>
+                            <input type="password" data-ng-model="password"
+                                   class="form-control input-lg input-round text-center"
+                                   placeholder="Password"
+                                   >
+                        </div>
+                        <div class="form-group center-block">
+                            <button type="button" data-ng-click="log.login()" class="btn btn-primary btn-block btn-default-light btn-round ">Log In</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <section>
+                    <p class="text-center"><a data="#/pages/forgot-password">Forgot your password?</a></p>
+                    <p class="text-center text-muted text-small">Don't have an account yet? <a href="javascript:;" data-ng-click="singup()">Sign up</a></p>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+        </div>
+        
+        
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script src="scripts/vendor.js"></script>
+        <script src="scripts/ui.js"></script>
+        <script src="scripts/app.js"></script>
+    </body>
+</html>

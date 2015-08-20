@@ -1,0 +1,48 @@
+<div class="page" ng-controller="selectNEVCtrl as evt" ng-init="evt.consultar()">
+
+        
+        <div >
+            <section class="panel panel-default mail-container">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Ver {{tipo}}</strong></div>
+                <div class="tl-body">
+                    <div class="tl-tile text-primary">
+                        
+                        <div class="pull-center">
+                            <h3>    {{NEV.titulo}}</h3>
+                        </div>
+                    </div>
+                    <br>
+                   
+                    <div class="tl-tile text-info">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="pull-left">
+                                     <strong>{{NEV.autoria}}</strong> 
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="pull-right">
+                                    {{NEV.fecha}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <br>
+                    <div class="tl-content">
+                        <div text-angular ng-model="NEV.contenido" class="ui-editor" ></div>
+                    </div>
+                    <br>
+                    <br>
+                    
+                     <section class="panel panel-default">
+                             <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Intereses</strong></div>
+                        <div class="panel-body" >
+                            <tags-input ng-model="NEV.intereses" class="ui-tags-input" ></tags-input>
+                        </div>
+                     </section>
+                  
+                  
+                </div>
+            </section>
+        </div>
+    </div>
